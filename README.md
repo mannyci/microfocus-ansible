@@ -19,8 +19,14 @@ This collection requires `Python 3.x` or greater.
 |microfocus.itsm.ucmdb|Microfocus CMDB as Inventory source |
 
 ## Example inventory plugin
-
-
+```
+plugin: microfocus.itsm.ucmdb
+url: http://example.com
+user: xxx
+password: xxx
+validate_certs: true
+tql: example
+```
 
 ## Modules
 
