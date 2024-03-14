@@ -62,6 +62,12 @@ options:
 EXAMPLES = r"""
 # An example that retrieves a host from Microfocus CMDB instance.
 plugin: microfocus.itsm.ucmdb
+url: http://example.com
+user: xxx
+password: xxx
+validate_certs: true
+tql: example
+
 
 # `ansible-inventory -i inventory.ucmdb.yml --graph` output:
 # @all:

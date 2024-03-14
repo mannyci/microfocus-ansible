@@ -8,7 +8,7 @@ This collection has been tested against following Ansible versions: >=2.9.10.
 
 # Python version
 
-This collection requires Python 3.x or greater.
+This collection requires `Python 3.x` or greater.
 
 # Included Content
 
@@ -18,10 +18,21 @@ This collection requires Python 3.x or greater.
 |---|---|
 |microfocus.itsm.ucmdb|Microfocus CMDB as Inventory source |
 
+## Example inventory plugin
+
+
+
 ## Modules
 
+| Name | Description |
+|---|---|
+|NA|NA
+
 # Installing this collection
-You can install the Microfocus collection with the Ansible Galaxy CLI:
+
+## Install from source
+
+With Ansible >= 2.10, you can install from a Github repository (such as this one or your fork):
 
 ```
 ansible-galaxy collection install git+https://github.com/mannyci/microfocus-ansible.git
@@ -32,6 +43,14 @@ You can also include it in a `requirements.yml` file and install it with `ansibl
 ```
 ---
 collections:
-  - name: microfocus.itsm
+  - name: https://github.com/mannyci/microfocus-ansible.git
+    type: git
+    version: main
 ```
+
+# Dependencies
+
+These dependencies are required for the Ansible controller, not the Microfocus instance.
+
+- requests
 
