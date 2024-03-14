@@ -1,0 +1,17 @@
+namespace: microfocus
+name: itsm
+version: 1.0.0
+readme: README.md
+authors:
+  - Manas Maiti <mmaiti@redhat.com>
+description: Ansible Collection for interacting with Microfocus CMDB
+license_file: LICENSE
+tags:
+  - microfocus
+  - cmdb
+repository: https://github.com/mannyci/microfocus-ansible.git
+homepage: https://github.com/mannyci/microfocus-ansible.git
+issues: https://github.com/mannyci/microfocus-ansible.git/issues
+build_ignore:
+  - .gitignore
+  - changelogs/.plugin-cache.yaml
