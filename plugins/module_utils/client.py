@@ -40,6 +40,7 @@ class Client:
         'clientContext': 1
       }
       auth_call = requests.post(self.url + "/authenticate", json=auth_params, headers=headers, verify=self.get_option('validate_certs'))
+      auth_call.raise_for_status()
       self.token = auth_call.json()["token"]
       self.headers = {
         "Authorization": "Bearer " + self.token,
@@ -51,7 +52,6 @@ class Client:
     try:
       execute_tql = requests.post(self.url + "/topology", data=self.tql, headers=self.headers, verify=self.get_option('validate_certs'))
     except Exception as e:
-
       raise AnsibleError(e)
     j_out_dict = json.loads(execute_tql.text)
     self.cis = j_out_dict["cis"]
