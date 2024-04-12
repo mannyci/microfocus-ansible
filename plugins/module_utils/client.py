@@ -25,13 +25,11 @@ class Client:
     self.headers = None
     self.cis = None
     self.tql = None
-    print('Init called')
 
     if not HAS_REQUESTS:
         raise AnsibleError('This script requires python-requests 1.1 as a minimum version')
   
   def _session(self, **kwargs):
-    print('session called')
     if not self.headers:
       headers = {
         "Content-Type": "application/json"
@@ -41,7 +39,6 @@ class Client:
         'password': self.get_option('password'),
         'clientContext': 1
       }
-      print(auth_params)
       auth_call = requests.post(self.url + "/authenticate", json=auth_params, headers=headers, verify=self.get_option('validate_certs'))
       self.token = auth_call.json()["token"]
       self.headers = {
@@ -51,7 +48,6 @@ class Client:
     return self.headers
 
   def _exec_tql(self, **kwargs):
-    print('tql called')
     try:
       execute_tql = requests.post(self.url + "/topology", data=self.tql, headers=self.headers, verify=self.get_option('validate_certs'))
     except Exception as e:
